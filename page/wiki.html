@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MHA wiki</title>
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body style="background-image: url('../img/background-wiki.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+<header>
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html"><span style="color: #F2B55C;">My </span><span style="color: #E9E0B0;">Hero </span><span style="color: #fff;">Academia</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="news.html"><h4>Новости</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="wiki.html"><h4>Вики</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video.html"><h4>Просмотр</h4></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"><img src="../img/logo.png" alt="" style="width: 20%; margin-left: 40%;"></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+<br><br><br><br>
+  <div class="outer">
+    <div class="inner">
+
+            <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Поиск</button>
+        <div id="myDropdown" class="dropdown-content">
+                <main style="margin-left: 10%; margin-right: 10%;" ng-app>
+                  <div ng-init='charecters=[
+                  {"title": "Всемогущий", "rank": "Профecсиональный герой", "category": "Герой"},
+                  {"title": "Изуку Мидория", "rank": "Студент", "category": "Герои"},
+                  {"title": "Химико Тога", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Кацуки Бакуго", "rank": "Студент", "category": "Герои"},
+                  {"title": "Сотриголова", "rank": "Учитель", "category": "Герой"},
+                  {"title": "Очако Урарака", "rank": "Студент", "category": "Герои"},
+                  {"title": "Кюдай Гараки", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Незу", "rank": "Директор", "category": "Герой"},
+                  {"title": "Тенья Иида", "rank": "Студент", "category": "Герои"},
+                  {"title": "Мускул", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Полночь", "rank": "Учитель", "category": "Герой"},
+                  {"title": "Томура Шигараки", "rank": "Злодей высокого уровня", "category": "Злодеи"},
+                  {"title": "Шото Тодороки", "rank": "Студент", "category": "Герои"},
+                  {"title": "Циментос", "rank": "Учитель", "category": "Герой"},
+                  {"title": "Цую Асуи", "rank": "Студент", "category": "Герои"},
+                  {"title": "Эктоплазм", "rank": "Учитель", "category": "Герой"},
+                  {"title": "Юга Аояма", "rank": "Студент", "category": "Герои"},
+                  {"title": "Тору Хагакуре", "rank": "Студент", "category": "Герои"},
+                  {"title": "Все За Одного", "rank": "Злодей высокого уровня", "category": "Злодеи"},
+                  {"title": "Момо Яойорозу", "rank": "Студент", "category": "Герои"},
+                  {"title": "Спиннер", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Мистер Компресс", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Рикидо Сато", "rank": "Студент", "category": "Герои"},
+                  {"title": "Сущий Мик", "rank": "Учитель", "category": "Герой"},
+                  {"title": "Кьёка Джиро", "rank": "Студент", "category": "Герои"},
+                  {"title": "Курогири", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Мезо Шоджиa", "rank": "Студент", "category": "Герои"},
+                  {"title": "Минору Минета", "rank": "Студент", "category": "Герои"},
+                  {"title": "Фумикаге Токоями", "rank": "Студент", "category": "Герои"},
+                  {"title": "Даби", "rank": "Злодей", "category": "Злодеи"},
+                  {"title": "Твайс", "rank": "Злодей высокого уровня", "category": "Злодеи"},
+                  {"title": "Коджи Кода", "rank": "Студент", "category": "Герои"},
+                  {"title": "Денки Каминари", "rank": "Студент", "category": "Герои"},
+                  {"title": "Маширао Оджиро", "rank": "Студент", "category": "Герои"},
+                  {"title": "Мина Ашидо", "rank": "Студент", "category": "Герои"},
+                  {"title": "Эйджиро Киришима", "rank": "Студент", "category": "Герои"},
+                  {"title": "Ханта Серо", "rank": "Студент", "category": "Герои"}
+
+                  ]'>
+                  </div>
+                  <input type="text" class="form-control" ng-model="search" placeholder="🔍 Searches :">
+                  <table class="table">
+                    <tr>
+                      <th>Имя</th>
+                      <th>Ранг</th>
+                      <th>Категория</th>
+                    </tr>
+                    <tr ng-repeat="char in charecters | filter : search">
+                      <td>{{char.title}}</td>
+                      <td>{{char.rank}}</td>
+                      <td>{{char.category}}</td>
+                    </tr>
+                  </table>
+                </main>
+              </div>
+            </div> <br><br>
+
+
+            <div class="container-content" style="padding: 10px;">
+                <p><b>«Моя геройская академия»</b> — манга, написанная и иллюстрированная Кохэем Хорикоси. Сюжет рассказывает об Идзуку Мидории, мальчике, родившемся без сверхспособностей (называемых причудами) в мире, где они стали обычным явлением, но всё же мечтающем стать героем. Он встречает Всемогущего — величайшего героя Японии и символ мира, который передаёт свою причуду Идзуку после признания его потенциала.
+                    <br><br>
+                Первая глава манги вышла 7 июля 2014 года в 32-м выпуске журнала Weekly Shonen Jump. Серия была лицензирована для выпуска на английском языке Viz Media и начала выходить в их еженедельном цифровом журнале Weekly Shonen Jump 9 февраля 2015 года.
+                    <br><br>
+                Манга была адаптирована в аниме-сериал, первый сезон которой транслировался с 3 апреля по 26 июня 2016 года, второй сезон транслировался с 1 апреля по 30 сентября 2017 года. Премьера 3 сезона состоялась 7 апреля 2018 года. Трансляция 4 сезона прошла с 12 октября 2019 года по 4 апреля 2020 года. Премьера 5 сезона состоялась 27 марта 2021 года. 3 августа 2018 года был выпущен первый анимационный фильм под названием My Hero Academia: Two Heroes. Второй анимационный фильм под названием My Hero Academia: Heroes Rising был выпущен 20 декабря 2019 года. Третий анимационный фильм My Hero Academia: Wоrld Hеroes Missiоn был выпущен 6 августа 2021 года. Есть планы для создания игрового фильма компании Legendary Entertainment.
+                    <br><br>
+                Манга получила Премию Харви в 2019 году в номинации «Лучшая манга». После выхода 30 тома 2 апреля 2021 года общий тираж манги по всему миру достиг 50 млн экземпляров, из них 13 млн выпущено за пределами Японии. Как манга, так и аниме-адаптация получили подавляющий положительный отклик как от критиков, так и от зрителей и считаются одними из лучших в 2010-х годах.</p>
+
+                <h2>Сюжет</h2>
+                <p>Действие происходит в мире, где большинство людей рождается с необычной способностью, которая называется «причуда». Однако главный герой, Идзуку Мидория, родился без причуды. Мечтая когда-нибудь стать героем, он упорно пытается достичь небывалой силы и приблизиться к своей мечте. После встречи со своим кумиром Всемогущим он получает собственные суперсилы и решает поступить в академию «Юэй» (UA). Несмотря на практически провальное вступительное испытание, Идзуку таки поступает в желанное учебное заведение.</p>
+            </div>
+
+
+            <h1>Class 1-A</h1>
+
+
+        <div class="card-container" style="margin-left: 8%">
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Izuku.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Изуку Мидория</h5>
+                <a href="pageChar/izuku.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Katsuki.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Кацуки Бакуго</h5>
+                <a href="pageChar/katsuki.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Ochako.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Очако Урарака</h5>
+                <a href="pageChar/ochaka.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Tenya.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Тенья Иида</h5><br>
+                <a href="pageChar/tenya.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+        </div>
+
+<!--          -------------------------------           -->
+
+
+         <div class="card-container" style="margin-left: 8%">
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Shouto.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Шото Тодороки</h5>
+                <a href="pageChar/shouto.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Tsuyu.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Цую Асуи</h5><br>
+                <a href="pageChar/tsuyu.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Yuuga.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Юга Аояма</h5><br>
+                <a href="pageChar/yuuga.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Tooru.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Тору Хагакуре</h5>
+                <a href="pageChar/tooru.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+        </div>
+
+<!--          -------------------------------           -->
+
+
+         <div class="card-container" style="margin-left: 8%">
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Minoru.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Минору Минета</h5><br>
+                <a href="pageChar/minoru.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Momo.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Момо Яойорозу</h5><br>
+                <a href="pageChar/momo.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Fumikage.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Фумикаге Токоями</h5><br>
+                <a href="pageChar/fumikage.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Kyouka.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Кьёка Джиро</h5><br>
+                <a href="pageChar/kyouka.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+        </div>
+
+<!--          -------------------------------           -->
+
+
+         <div class="card-container" style="margin-left: 8%">
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Mina.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Мина Ашидо</h5><br>
+                <a href="pageChar/mina.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Mashirao.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Маширао Оджиро</h5><br>
+                <a href="pageChar/mashirao.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Denki.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Денки Каминари</h5><br>
+                <a href="pageChar/denki.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Eijirou.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Эйджиро Киришима</h5><br>
+                <a href="pageChar/eijirou.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+        </div>
+
+<!--          -------------------------------           -->
+
+
+         <div class="card-container" style="margin-left: 8%">
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Rikidou.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Рикидо Сато</h5><br>
+                <a href="pageChar/rikidou.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Kouji.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Коджи Кода</h5><br><br>
+                <a href="pageChar/kouji.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Mezou.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Мезо Шоджиa</h5><br>
+                <a href="pageChar/mezou.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 9rem;">
+              <img src="../avatarIMG/Hanta.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Ханта Серо</h5><br><br>
+                <a href="pageChar/hanta.html" class="btn btn-dark">Подробнее</a>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+ </div>
+ <script src="script.js"></script>
+</body>
+</html>
